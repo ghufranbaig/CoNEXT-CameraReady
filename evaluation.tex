@@ -4,7 +4,9 @@
 \label{sec:eval}
 
 We evaluate the performance and properties of \cf 's interference management in large scale networks using the ns3 simulator ~\cite{ns3url}. 
-Simulations are parametrized based on the experiments in the previous section, (the control channel interference and imperfect CQI reporting).
+Simulations are parametrized based on the experiments in the previous section. 
+%(the control channel interference, imperfect CQI reporting and PRACH detection).
+\cmnt{We model the control channel interference by scaling down the measured throughput based on the measurements in Fig. ~\ref{fig:interf_control}. We have introduced 2\% false positives and 80\% probability of correct interference detection using the measurements in previous section to model imperfect interference detection because of incorrect CQI reporting. Our measurements show that our PRACH detector can detect the preambles reliably at -10dB, we count only the users whose PRACH can be heard at -10dB, this simulates the imperfect user detection as users whose PRACH is heard below -10dB are still effected by the interference but are not considered in share calculation.}
 Overall, the evaluation examines a set of static and dynamic traffic scenarios along three dimensions.\\[2pt]
 \noindent $\bullet$ \emph{MAC effects on throughput and coverage} in presence of interference, and comparison against LTE and \wf. \\[2pt]
 \noindent $\bullet$ \emph{Application-level performance} by measuring the page download times of a web-like workload. \\[2pt]
@@ -54,7 +56,7 @@ Unless otherwise noted, every scenario is repeated 20 times on a new topology.
 {\em Workloads.} We consider two types of traffic workloads and focus on downlink traffic. 
 First, backlogged flows for all clients are used for throughput measurements. Second, 
 we model web-like traffic based on realistic parameters regarding flow size, 
-number of objects per page~\cite{trafficmodel} and thinking time distributions~\cite{thinktime}. 
+number of objects per page and object size from ~\cite{trafficmodel} using thinking time distributions~\cite{thinktime} to get flow inter arrival times. 
 
 
 %\begin{itemize}
@@ -118,6 +120,7 @@ the oracle subchannel allocation (Figure~\ref{fig:simulations}(b)).
 \noindent{\bf Application-level performance.} 
 To understand \cf's impact on real applications, we model dynamic traffic conditions based
 on our web workload, and examine web-page download times. 
+
 Figure~\ref{fig:simulations} (c) presents the corresponding CDFs of page completion time. The figure
 highlights that \cf reduces completion times by 2.3 times at the median compared to \wf, 
 and roughly by 8\% relative to LTE. LTE provides marginally better times at smaller percentiles, however

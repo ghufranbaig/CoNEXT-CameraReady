@@ -197,7 +197,8 @@ See Figure~\ref{fig:hopping} for pseudocode.
 \noindent $\bullet$ If client $u_j$ observes subchannel $k$ as \emph{good} (according to the last CQI report), then $b^{i}_{k}$ stays unchanged.
 %\item 
 \vskip 2pt
-\noindent $\bullet$ Otherwise we interpret subchannel $k$ as being a \emph{bad} for \eNB $i$. Consequently, the bucket value $b^{i}_{k}$ is decremented to $b_k(t+1) = b_k(t) - frac_j$, where $frac_j$ is the fraction of time that $u_j$ got scheduled on subchannel $k$ during the last period.
+\noindent $\bullet$ Otherwise we interpret subchannel $k$ as being a \emph{bad} for \eNB $i$. Consequently, the bucket value $b^{i}_{k}$ is decremented to $b_k(t+1) = b_k(t) - frac_j$, where $frac_j$ is the fraction of time that $u_j$ got scheduled on subchannel $k$ during the last period. 
+\cmnt{The bucket update mechanism makes sure that a new \eNB is able to win a subchannel irrespective of how long the previous \eNB has been operating on it.}
 \vskip 2pt
 %\end{itemize}
 %\todo{The random bucket values and bucket update procedure would ensure that two interfering users scheduled on a subchannel would not give up the subchannel at the same time hence ensuring both users get non-interfering subchannels eventually. }

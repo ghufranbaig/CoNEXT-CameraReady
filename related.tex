@@ -9,7 +9,7 @@ The main proposed standards are LAA, LWA and LTE-U.
 LTE-U focuses only on coexistence between LTE and WiFi using adaptive on/off duty cycling such that effectively only LTE nodes are operational during On period. But it has no mechanism of sharing spectrum between two interfering LTE networks.
 This is an orthogonal solution that could be deployed along CellFi to enable coexistence with 802.11af.
 LAA has proposed a contention protocol similar to WiFi CSMA to medium access. This enables LAA networks to coexist with both WiFi and other LAA networks, however its performance will suffer in long range whitespace networks as it will face similar MAC inefficiencies as 802.11af since the medium access mechanism is similar in both technologies.
-\cmnt{MulteFire ~\cite{} is proposed LTE small cell technology for standalone operation in unlicensed spectrum. Similar to LAA, it uses LBT mechanism to do over the air contention as it has been designed keeping in mind the 5 GHz unlicensed spectrum band which has LBT requirmenet in many markets. Therefore In long range whitespace networks it will face similar MAC inefficiencies as 802.11 af.}
+\cmnt{MulteFire ~\cite{multefire} is proposed LTE small cell technology for standalone operation in unlicensed spectrum. Similar to LAA, it uses LBT mechanism to do over the air contention as it has been designed keeping in mind the 5 GHz unlicensed spectrum band with LBT requirement in many markets. Therefore in long range whitespace networks it will face similar MAC inefficiencies as 802.11 af.}
 
 %Previous works ~\cite{co-existence, lteu-google} focus on WiFi and LTE coexistence in unlicensed spectrum, but coexistence between two LTE networks on the same spectrum has not been studied much.
 
@@ -23,7 +23,7 @@ WiFi channel allocation has been extensively researched.
 %http://www.cs.umd.edu/~srin/PDF/2006/chan-mgmt-conf.pdf
 %http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5337940
 %http://research.microsoft.com/en-us/um/people/moscitho/Publications/ICNP_2008.pdf
-There have been several studies ~\cite{client-deriven} ~\cite{load-aware} that address resource allocation using graph coloring for WiFi networks, but their aim is to get maximum number of orthogonal contiguous channels to each interfering AP. Our work aims at getting weighted max-min fair allocation for interfering clients by utilizing as many spectrum fragments (not necessarily contiguous) as possible.
+There have been several studies ~\cite{client-deriven} ~\cite{load-aware} that address resource allocation using graph coloring for WiFi networks, but their aim is to get maximum number of orthogonal contiguous channels to each interfering AP. Our work aims at getting fair allocation for interfering clients by utilizing as many spectrum fragments (not necessarily contiguous) as possible.
 \wf 802.11af can be made to use more than one channel~\cite{whitefi}, and  LTE can achieve this with carrier aggregation. We leave exploring these options for future work. 
 
 Several papers proposed the idea to use LTE in TV white spaces~\cite{dyspan_lte12, radisys} but none has described an architecture or proposed an efficient distributed interference management system compatible with today's hardware. 
